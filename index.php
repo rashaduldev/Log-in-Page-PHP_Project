@@ -19,6 +19,7 @@ include 'db.php';
             <button>Login</button>
             <div class="row">
                 <a href="#">Forget Password</a>
+                <a href="#">Another</a>
                 <a class="text-end" href="#">Sign Up</a>
             </div>
         </form>

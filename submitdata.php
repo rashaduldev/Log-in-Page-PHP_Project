@@ -6,7 +6,11 @@ include 'db.php';
     $pass = $_POST['pass'];
     $number = $_POST['number'];
 
-    $query = mysqli_query($db_con, "INSERT INTO `users`( `username`, `password`, `number`) VALUES ('$user', '$pass', '$number')");
+    if ($user == '' || $pass == '' || $number == '') {
+        header('Location: index.php');
+    } else {
+        $query = mysqli_query($db_con, "INSERT INTO `users`( `username`, `password`, `number`) VALUES ('$user', '$pass', '$number')");
+    }
 
 ?>
 
@@ -15,11 +19,9 @@ include 'db.php';
 
     if($query){
         ?>
-
         <script>
             window.location.href = 'success.php';
         </script>
-
         <?php
     }
 ?>
